@@ -1,0 +1,13 @@
+# Root — applies to all subprojects
+node_modules/
+.expo/
+dist/
+web-build/
+*.tsbuildinfo
+.DS_Store
+.env*.local
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+.kotlin/
+*.pem
