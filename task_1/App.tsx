@@ -1,18 +1,18 @@
 import { FlatList, Image, StyleSheet, Text, View } from 'react-native';
 
-type Product = {
+export type Product = {
     id: string;
     title: string;
     description: string;
 };
 
-const PRODUCTS: Product[] = [
+export const PRODUCTS: Product[] = [
     { id: '1', title: 'Card Title', description: 'Card Description' },
     { id: '2', title: 'Second product', description: 'Another description' },
     { id: '3', title: 'Third product', description: 'More items in the list' },
 ];
 
-function ProductItem({ product }: { product: Product }) {
+export function ProductItem({ product }: { product: Product }) {
     return (
         <View style={styles.card}>
             <Image
@@ -27,7 +27,8 @@ function ProductItem({ product }: { product: Product }) {
     );
 }
 
-export default function App() {
+/** Task 1: FlatList + keys + ProductItem — используется в expo-router `app/(tabs)/index.tsx` */
+export function ProductListScreen() {
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -41,6 +42,10 @@ export default function App() {
             />
         </View>
     );
+}
+
+export default function App() {
+    return <ProductListScreen />;
 }
 
 const styles = StyleSheet.create({
